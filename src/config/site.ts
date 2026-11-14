@@ -16,6 +16,9 @@ import a3 from "@/assets/avatar-3.jpg";
 import a4 from "@/assets/avatar-4.jpg";
 import a5 from "@/assets/avatar-5.jpg";
 import a6 from "@/assets/avatar-6.jpg";
+import a7 from "@/assets/avatar-7.jpg";
+import a8 from "@/assets/avatar-8.jpg";
+import a9 from "@/assets/avatar-9.jpg";
 const c20fr = { url: "/media/cover-20-fr.png" };
 const c20en = { url: "/media/cover-20-en.png" };
 const c40fr = { url: "/media/cover-40-fr.png" };
@@ -102,14 +105,17 @@ export const PACKS: Pack[] = [
 // Recipe videos: autoplay, muted, looping marquee.
 export const VIDEOS: string[] = [v1.url, v2.url, v3.url, v4.url, v5.url, v6.url, v7.url, v8.url, v9.url, v10.url];
 
-// Customer reviews shown in "Ils nous font confiance".
-export const TESTIMONIALS: { name: string; avatar: string; rating: number; text: Record<Lang, string> }[] = [
-  { name: "Camille R.", avatar: a1, rating: 5, text: { fr: "Merci vraiment Délices Maison ! Le poulet rôti du pack 20 est devenu le plat préféré de mes enfants, on le fait chaque dimanche.", en: "Thank you so much Délices Maison! The roast chicken from the 20 pack is now my kids' favourite, we make it every Sunday." } },
-  { name: "Sarah M.", avatar: a2, rating: 5, text: { fr: "J'ai reçu l'e-book en deux minutes. Les étapes sont claires, les photos donnent faim, et j'ai réussi dès le premier essai.", en: "I got the e-book within two minutes. The steps are clear, the photos make you hungry, and I nailed it on my first try." } },
-  { name: "Inès B.", avatar: a3, rating: 5, text: { fr: "Je cherchais des idées pas chères pour la semaine : avec le pack 40 je ne me demande plus quoi cuisiner. Bravo Délices Maison.", en: "I wanted budget ideas for the week: with the 40 pack I never wonder what to cook anymore. Well done Délices Maison." } },
-  { name: "Julie T.", avatar: a4, rating: 5, text: { fr: "Un e-book magnifique, très bien mis en page. Les desserts du pack 60 ont fait sensation à l'anniversaire de ma mère.", en: "A gorgeous, beautifully laid-out e-book. The desserts from the 60 pack were a hit at my mum's birthday." } },
-  { name: "Marc D.", avatar: a5, rating: 5, text: { fr: "Je ne savais presque rien cuisiner. Grâce à Délices Maison je prépare de vrais repas le soir, et ma femme est bluffée.", en: "I could barely cook. Thanks to Délices Maison I make real dinners now, and my wife is amazed." } },
-  { name: "Aïcha K.", avatar: a6, rating: 5, text: { fr: "Des recettes généreuses qui rappellent la cuisine de famille. Rapport qualité-prix imbattable, je recommande les yeux fermés !", en: "Generous recipes that taste like family cooking. Unbeatable value, I recommend it without hesitation!" } },
+// Customer reviews: shown three at a time.
+export const TESTIMONIALS: { name: string; flag: string; avatar: string; rating: number; text: Record<Lang, string> }[] = [
+  { name: "Sophie L.", flag: "🇫🇷", avatar: a1, rating: 5, text: { fr: "Un site incroyable ! Les recettes sont simples et délicieuses. Je recommande à 100 %.", en: "An amazing site! The recipes are simple and delicious. I recommend it 100%." } },
+  { name: "Mamadou D.", flag: "🇸🇳", avatar: a7, rating: 5, text: { fr: "Enfin des recettes faciles à suivre. Toute la famille en redemande, merci Délices Maison !", en: "Finally, recipes that are easy to follow. The whole family wants more, thank you Délices Maison!" } },
+  { name: "Emma R.", flag: "🇫🇷", avatar: a8, rating: 5, text: { fr: "Parfait pour toute la famille. Les recettes sont un vrai régal, mes enfants adorent !", en: "Perfect for the whole family. The recipes are a real treat, my kids love them!" } },
+  { name: "Camille R.", flag: "🇧🇪", avatar: a2, rating: 5, text: { fr: "E-book reçu en deux minutes. Les photos donnent faim et j'ai tout réussi du premier coup.", en: "Got the e-book in two minutes. The photos make you hungry and I nailed everything first try." } },
+  { name: "Karim B.", flag: "🇲🇦", avatar: a5, rating: 5, text: { fr: "Je ne savais pas cuisiner, maintenant je prépare de vrais repas le soir. Ma femme est bluffée !", en: "I couldn't cook, now I make real dinners every night. My wife is amazed!" } },
+  { name: "Julie T.", flag: "🇨🇦", avatar: a4, rating: 5, text: { fr: "Magnifique mise en page. Les desserts du pack 60 ont fait sensation à l'anniversaire de ma mère.", en: "Beautiful layout. The desserts from the 60 pack were a hit at my mum's birthday." } },
+  { name: "Nadia K.", flag: "🇫🇷", avatar: a9, rating: 5, text: { fr: "Rapport qualité-prix imbattable. Je ne me demande plus jamais quoi cuisiner, un vrai bonheur.", en: "Unbeatable value. I never wonder what to cook anymore, pure joy." } },
+  { name: "Inès B.", flag: "🇨🇭", avatar: a3, rating: 5, text: { fr: "Des recettes généreuses qui rappellent la cuisine de famille. Je les ai offertes à ma sœur !", en: "Generous recipes that taste like family cooking. I gifted them to my sister!" } },
+  { name: "Aïcha K.", flag: "🇨🇮", avatar: a6, rating: 5, text: { fr: "Chaque recette fonctionne, les quantités sont justes. Le meilleur achat de l'année !", en: "Every recipe works and the quantities are spot on. Best purchase of the year!" } },
 ];
 
 export const T = {

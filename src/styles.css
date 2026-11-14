@@ -124,3 +124,49 @@
 }
 
 @utility animate-video-marquee { animation: marquee 60s linear infinite; }
+
+/* Reference redesign */
+:root {
+  --cocoa-deep: oklch(0.27 0.06 45);
+  --gradient-cocoa: linear-gradient(160deg, oklch(0.36 0.08 48), oklch(0.24 0.055 40));
+  --gradient-gold-rim: linear-gradient(90deg, oklch(0.62 0.13 60), oklch(0.88 0.15 85), oklch(0.62 0.13 60));
+  --gradient-brush: linear-gradient(100deg, oklch(0.8 0.16 78), oklch(0.88 0.16 90) 50%, oklch(0.76 0.15 70));
+  --gradient-offer: linear-gradient(180deg, oklch(0.24 0.05 40 / 0.95) 0%, oklch(0.24 0.05 40 / 0.7) 45%, oklch(0.24 0.05 40 / 0.1) 75%);
+  --gradient-gift: linear-gradient(110deg, oklch(0.32 0.075 45), oklch(0.42 0.09 52) 60%, oklch(0.36 0.08 48));
+  --shadow-gold: 0 10px 30px -10px oklch(0.75 0.15 75 / 0.7);
+}
+@theme inline {
+  --color-cocoa-deep: var(--cocoa-deep);
+}
+@utility bg-cocoa-grad { background-image: var(--gradient-cocoa); }
+@utility bg-gold-rim { background-image: var(--gradient-gold-rim); }
+@utility bg-brush { background-image: var(--gradient-brush); clip-path: polygon(3% 8%, 97% 0, 100% 50%, 96% 100%, 4% 92%, 0 45%); }
+@utility bg-offer-fade { background-image: var(--gradient-offer); }
+@utility bg-gift-grad { background-image: var(--gradient-gift); }
+@utility shadow-gold { box-shadow: var(--shadow-gold); }
+@utility text-gold-grad { background-image: var(--gradient-sun); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@utility wave-both { clip-path: ellipse(140% 100% at 50% 100%); }
+
+@keyframes offer-in {
+  0% { opacity: 0; transform: scale(.3) rotate(-14deg); }
+  25% { opacity: 1; transform: scale(1.12) rotate(4deg); }
+  40% { transform: scale(.95) rotate(-2deg); }
+  55% { transform: scale(1.04) rotate(1deg); }
+  70% { transform: scale(1) rotate(0); }
+  80% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+@utility animate-offer-in { animation: offer-in 4s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes shine { 0% { transform: translateX(-120%) skewX(-20deg); } 100% { transform: translateX(260%) skewX(-20deg); } }
+@utility animate-shine { animation: shine 1.6s ease-in-out 3 .4s both; }
+@keyframes fade-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@utility animate-fade-up { animation: fade-up .7s ease both; }
+@keyframes tick { 0% { transform: translateY(-30%); opacity: .2; } 100% { transform: none; opacity: 1; } }
+@utility animate-tick { animation: tick .35s ease-out; }
+@keyframes gift-wiggle { 0%,100% { transform: rotate(0) translateY(0); } 15% { transform: rotate(-8deg) translateY(-6px); } 30% { transform: rotate(7deg) translateY(-10px); } 45% { transform: rotate(-5deg) translateY(-4px); } 60% { transform: rotate(3deg); } }
+@utility animate-gift { animation: gift-wiggle 2.6s ease-in-out infinite; transform-origin: 50% 90%; }
+@keyframes badge-pulse { 50% { transform: rotate(-4deg) scale(1.06); } }
+@utility animate-badge { animation: badge-pulse 2.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .animate-offer-in, .animate-shine, .animate-gift, .animate-badge, .animate-tick { animation: none; }
+}
